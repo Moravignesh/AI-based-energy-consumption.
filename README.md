@@ -1,4 +1,4 @@
-# ⚡ Energy AI Platform v2
+#  Energy AI Platform v2
 
 > Full-stack AI-powered platform for energy consumption **forecasting**, **anomaly detection**,
 > **optimization** and **scenario simulation**.
@@ -355,5 +355,6 @@ pytest tests/test_ml.py -v
 | CORS error in browser | Confirm backend is running on port 8000 |
 | `No data loaded` banner | Go to Upload page → Generate Sample Data |
 | Forecast fails with < 48 records | Upload more data or use the sample generator |
-#   A I - B a s e d - e n e r g y - c o n s u m p t i o n - f o r e c a s t i n g .  
+#   A I - B a s e d - e n e r g y - c o n s u m p t i o n - f o r e c a s t i n g . 
+ 
  
