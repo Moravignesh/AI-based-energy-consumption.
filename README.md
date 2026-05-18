@@ -19,6 +19,14 @@
 
 The **AI-Based Energy Consumption Forecasting & Optimization System** is a production-ready, full-stack web application that helps organizations predict future energy usage, detect abnormal consumption patterns, generate intelligent cost-saving recommendations, and simulate the impact of operational changes — all powered by machine learning.
 
+
+### Demo video
+
+frontend demo video : https://drive.google.com/file/d/1mcwNy3YcVVm_z23reiH2THVIiAai6DtQ/view?usp=sharing
+
+backend demo video : https://drive.google.com/file/d/10wOYhzTifImKMDdNS8kbV-IANg_4L66j/view?usp=sharing
+
+
 ---
 
 ## ✨ Features
