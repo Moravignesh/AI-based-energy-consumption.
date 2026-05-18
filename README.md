@@ -5,7 +5,7 @@
 
 ---
 
-## 🚀 Quick Start (Local — VSCode / Terminal)
+##  Quick Start (Local — VSCode / Terminal)
 
 ### Prerequisites
 
