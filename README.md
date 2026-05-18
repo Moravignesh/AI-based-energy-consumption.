@@ -1,165 +1,227 @@
-#  Energy AI Platform v2
+<div align="center">
 
-> Full-stack AI-powered platform for energy consumption **forecasting**, **anomaly detection**,
-> **optimization** and **scenario simulation**.
+# ⚡ AI-Based Energy Consumption Forecasting & Optimization System
+
+### Full-stack AI platform for energy forecasting, anomaly detection, optimization & scenario simulation
+
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)](https://scikit-learn.org)
+[![SQLite](https://img.shields.io/badge/SQLite-SQLAlchemy-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlalchemy.org)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
+
+</div>
 
 ---
 
-##  Quick Start (Local — VSCode / Terminal)
+## 📌 Overview
+
+The **AI-Based Energy Consumption Forecasting & Optimization System** is a production-ready, full-stack web application that helps organizations predict future energy usage, detect abnormal consumption patterns, generate intelligent cost-saving recommendations, and simulate the impact of operational changes — all powered by machine learning.
+
+---
+
+## ✨ Features
+
+| Module | Description |
+|--------|-------------|
+| 📈 **Forecasting** | 24h / 7d / 30d predictions using ARIMA & Ridge Regression with confidence intervals |
+| 🔍 **Anomaly Detection** | Isolation Forest + Z-Score ensemble detecting 5 anomaly types |
+| 💡 **Optimization** | 8 AI-generated recommendation categories with kWh & USD savings estimates |
+| 🔬 **Simulation** | 4 scenario engines: occupancy, temperature, device shutdown, peak reduction |
+| 📊 **Dashboard** | Real-time KPIs, device breakdown, hourly/weekly/monthly pattern charts |
+| 🔔 **Alerts** | Full CRUD alert system with auto-generation from anomaly scans |
+| 🖥️ **Device Manager** | Per-device analytics, forecasts, anomaly reports, history |
+| 📄 **Reports & Export** | Download raw data and summary reports as CSV or JSON |
+| 🤖 **Model Comparison** | Side-by-side ARIMA vs Linear Regression accuracy benchmarking |
+| ❤️ **Health API** | Liveness probe, detailed system status, and usage metrics |
+
+---
+
+## 🖼️ Application Pages
+
+| Page | What you see |
+|------|-------------|
+| Dashboard | KPI cards, consumption trend, device breakdown, hourly pattern chart |
+| Forecast | Model selector, confidence band chart, peak alerts, forecast table |
+| Anomaly | Time-series with anomalies highlighted, type breakdown, device rates |
+| Optimization | Savings KPIs, horizontal bar chart, expandable recommendation cards |
+| Simulation | Scenario selector, parameter sliders, baseline vs simulated chart |
+| Devices | All devices table, per-device stats, hourly pattern chart |
+| Alerts | Filterable alert list, mark read/resolve/delete, severity counts |
+| Reports | Summary report, one-click CSV/JSON export buttons |
+| Model Compare | Accuracy table, overlay forecast chart, accuracy history log |
+| Upload | Drag-and-drop CSV or one-click sample data generation |
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-| Tool | Version | Download |
-|------|---------|----------|
-| Python | 3.9 + | https://python.org |
-| Node.js | 18 + | https://nodejs.org |
-| npm | 9 + | bundled with Node.js |
+| Tool | Minimum Version | Download |
+|------|----------------|----------|
+| Python | 3.9+ | https://python.org |
+| Node.js | 18+ | https://nodejs.org |
+| Git | any | https://git-scm.com |
 
 ---
 
-### Step 1 — Backend
-
-Open a terminal in the `energy-ai-pro/` folder:
+### 1. Clone the Repository
 
 ```bash
-# 1. Enter the backend directory
+git clone https://github.com/Moravignesh/AI-based-energy-consumption..git
+cd AI-based-energy-consumption.
+```
+
+---
+
+### 2. Start the Backend
+
+```bash
+# Enter backend directory
 cd backend
 
-# 2. Create a virtual environment
+# Create virtual environment
 python -m venv venv
 
-# 3. Activate it
-#    Windows:
+# Activate — Windows:
 venv\Scripts\activate
-#    Mac / Linux:
+
+# Activate — Mac/Linux:
 source venv/bin/activate
 
-# 4. Install dependencies
+# Install dependencies
 pip install -r requirements.txt
 
-# 5. Start the API server  ← run from inside backend/
+# Copy environment config
+cp .env.example .env
+
+# Start API server (run from inside backend/)
 uvicorn main:app --reload --port 8000
 ```
 
-> ✅ Backend running at **http://localhost:8000**
+> ✅ API running at **http://localhost:8000**
 > 📖 Swagger docs at **http://localhost:8000/docs**
 
 ---
 
-### Step 2 — Frontend
+### 3. Start the Frontend
 
-Open a **second** terminal in the `energy-ai-pro/` folder:
+Open a **second terminal**:
 
 ```bash
-# 1. Enter the frontend directory
 cd frontend
-
-# 2. Install npm packages (first run only — takes ~30 sec)
-npm install
-
-# 3. Start the dev server
+npm install       # first run only
 npm run dev
 ```
 
-> ✅ Frontend running at **http://localhost:3000**
+> ✅ App running at **http://localhost:3000**
 
 ---
 
-### One-command start (Mac / Linux)
+### One-Command Start
 
 ```bash
+# Mac / Linux
 chmod +x start.sh && ./start.sh
-```
 
-### One-command start (Windows)
-
-```bat
+# Windows
 start.bat
 ```
 
 ---
 
-## 🐳 Docker Deployment
+### Docker
 
 ```bash
 docker-compose up --build
 ```
 
-| Service  | URL |
-|----------|-----|
+| Service | URL |
+|---------|-----|
 | Frontend | http://localhost:3000 |
-| Backend  | http://localhost:8000 |
-| API Docs | http://localhost:8000/docs |
+| Backend API | http://localhost:8000 |
+| Swagger Docs | http://localhost:8000/docs |
 
 ---
 
-## 📁 Getting Started (in the app)
+## 📁 Getting Started in the App
 
 1. Open **http://localhost:3000**
 2. Click **Upload Data** in the sidebar
-3. Click **"Generate 6-Month Sample Dataset"** — no file needed
-4. Explore **Dashboard → Forecast → Anomaly → Optimization → Simulation**
+3. Click **Generate 6-Month Sample Dataset** — no file needed
+4. Explore all pages — every feature works with the generated data
 
-Or upload your own CSV with columns: `timestamp`, `energy_kwh`
-(optional: `device_id`, `building_id`, `temperature`, `humidity`, `occupancy`)
+### Or upload your own CSV:
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| `timestamp` | ✅ | ISO 8601 datetime (e.g. `2024-01-01 08:00:00`) |
+| `energy_kwh` | ✅ | Energy consumption in kilowatt-hours |
+| `device_id` | optional | Meter or device name |
+| `building_id` | optional | Building or location grouping |
+| `temperature` | optional | Outdoor temperature in °C |
+| `humidity` | optional | Relative humidity percentage |
+| `occupancy` | optional | Number of occupants |
 
 ---
 
 ## 🗂️ Project Structure
 
 ```
-energy-ai-pro/
+AI-based-energy-consumption./
+├── .github/
+│   ├── workflows/
+│   │   └── ci.yml                   ← GitHub Actions CI pipeline
+│   └── pull_request_template.md
+│
 ├── backend/
-│   ├── main.py                    ← Entry point (uvicorn main:app)
-│   ├── requirements.txt
-│   ├── .env.example               ← Copy to .env to configure
+│   ├── main.py                      ← Entry point: uvicorn main:app
+│   ├── requirements.txt             ← Python dependencies
+│   ├── .env.example                 ← Environment variable template
 │   ├── Dockerfile
+│   ├── tests/
+│   │   └── test_ml.py               ← pytest unit tests
 │   └── app/
-│       ├── main.py                ← FastAPI application factory
-│       ├── database.py            ← SQLAlchemy ORM (SQLite)
+│       ├── main.py                  ← FastAPI application factory
+│       ├── database.py              ← SQLAlchemy ORM (6 tables)
 │       ├── core/
-│       │   ├── config.py          ← pydantic-settings
-│       │   ├── exceptions.py      ← Typed error classes + handlers
-│       │   └── logging.py         ← Structured logging
+│       │   ├── config.py            ← pydantic-settings configuration
+│       │   ├── exceptions.py        ← Custom error classes + handlers
+│       │   └── logging.py           ← Structured logging setup
 │       ├── models/
-│       │   └── schemas.py         ← 40+ Pydantic v2 schemas
+│       │   └── schemas.py           ← 40+ Pydantic v2 request/response models
 │       ├── ml/
-│       │   ├── forecasting.py     ← ARIMA + Ridge Regression
-│       │   ├── anomaly.py         ← Isolation Forest + Z-Score
-│       │   ├── optimization.py    ← 8 recommendation categories
-│       │   └── simulation.py      ← 4 scenario engines
+│       │   ├── forecasting.py       ← ARIMA + Ridge Regression engines
+│       │   ├── anomaly.py           ← Isolation Forest + Z-Score ensemble
+│       │   ├── optimization.py      ← 8 recommendation categories
+│       │   └── simulation.py        ← 4 scenario simulation engines
 │       ├── services/
-│       │   ├── data_store.py      ← Singleton DataFrame store
-│       │   ├── alert_service.py   ← Alert CRUD business logic
-│       │   └── export_service.py  ← CSV / JSON export
+│       │   ├── data_store.py        ← Singleton in-memory DataFrame store
+│       │   ├── alert_service.py     ← Alert CRUD business logic
+│       │   └── export_service.py    ← CSV and JSON export
 │       ├── api/v1/
-│       │   ├── router.py          ← Mounts all 11 routers
-│       │   └── endpoints/
-│       │       ├── upload.py      ← POST /upload/csv, /generate-sample
-│       │       ├── dashboard.py   ← GET /dashboard/summary, /historical, ...
-│       │       ├── forecast.py    ← POST /forecast/run, /batch
-│       │       ├── anomaly.py     ← POST /anomaly/run
-│       │       ├── optimization.py← GET /optimization/recommendations
-│       │       ├── simulation.py  ← POST /simulation/run
-│       │       ├── alerts.py      ← Full CRUD /alerts/
-│       │       ├── devices.py     ← GET /devices/, /devices/{id}
-│       │       ├── reports.py     ← GET /reports/export/csv, /json
-│       │       ├── models_compare.py ← GET /models/compare
-│       │       └── health.py      ← GET /health/detailed, /metrics
+│       │   ├── router.py            ← Mounts all 11 endpoint routers
+│       │   └── endpoints/           ← 49 REST API endpoints across 11 files
 │       └── utils/
-│           ├── preprocessing.py   ← Clean, validate, fill gaps
-│           └── data_generator.py  ← Synthetic 6-month dataset
+│           ├── preprocessing.py     ← Clean, validate, fill gaps, engineer features
+│           └── data_generator.py    ← Synthetic 6-month dataset generator
 │
 ├── frontend/
 │   ├── index.html
 │   ├── vite.config.js
 │   ├── package.json
+│   ├── Dockerfile
+│   ├── nginx.conf
 │   └── src/
-│       ├── App.jsx                ← Router + sidebar layout + context
-│       ├── index.css              ← Full dark design system
-│       ├── services/api.js        ← All 49 API calls (axios)
-│       ├── components/ui.jsx      ← Shared: KpiCard, DataTable, Alert, ...
-│       └── pages/
+│       ├── App.jsx                  ← Router + sidebar layout + AppContext
+│       ├── index.css                ← Complete dark design system
+│       ├── services/
+│       │   └── api.js               ← All 49 API calls using axios
+│       ├── components/
+│       │   └── ui.jsx               ← Shared components: KpiCard, DataTable, etc.
+│       └── pages/                   ← 10 full-featured pages
 │           ├── DashboardPage.jsx
 │           ├── ForecastPage.jsx
 │           ├── AnomalyPage.jsx
@@ -172,143 +234,205 @@ energy-ai-pro/
 │           └── UploadPage.jsx
 │
 ├── docker-compose.yml
-├── start.sh                       ← Mac/Linux one-command start
-├── start.bat                      ← Windows one-command start
+├── start.sh                         ← Mac/Linux one-command launcher
+├── start.bat                        ← Windows one-command launcher
 └── README.md
 ```
 
 ---
 
-## 🌐 API Reference (49 Endpoints)
+## 🌐 API Reference
 
-Base URL: `http://localhost:8000/api/v1`
-Interactive docs: `http://localhost:8000/docs`
+**Base URL:** `http://localhost:8000/api/v1`
+**Interactive Docs:** `http://localhost:8000/docs`
 
-### 📁 Upload
+<details>
+<summary>📁 Upload — 4 endpoints</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/upload/csv` | Upload energy CSV file |
-| POST | `/upload/generate-sample` | Generate synthetic sample data |
-| GET | `/upload/status` | Check loaded dataset |
-| DELETE | `/upload/clear` | Clear all data |
+| `POST` | `/upload/csv` | Upload energy CSV file |
+| `POST` | `/upload/generate-sample` | Generate synthetic 6-month data |
+| `GET` | `/upload/status` | Check loaded dataset info |
+| `DELETE` | `/upload/clear` | Clear all loaded data |
 
-### 📊 Dashboard
+</details>
+
+<details>
+<summary>📊 Dashboard — 8 endpoints</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/dashboard/summary` | All KPIs (cost, trend, forecast, alerts) |
-| GET | `/dashboard/historical` | Time-series data with filter + resolution |
-| GET | `/dashboard/device-breakdown` | Per-device share and cost |
-| GET | `/dashboard/hourly-pattern` | 24-hour average load profile |
-| GET | `/dashboard/weekly-pattern` | Mon–Sun average profile |
-| GET | `/dashboard/monthly-trend` | Month-by-month aggregation |
-| GET | `/dashboard/cost-analysis` | Peak vs off-peak cost breakdown |
-| GET | `/dashboard/statistics` | Descriptive stats (percentiles, skew) |
+| `GET` | `/dashboard/summary` | All KPIs (cost, trend, forecast, alerts) |
+| `GET` | `/dashboard/historical` | Time-series with device + date filters |
+| `GET` | `/dashboard/device-breakdown` | Per-device share and cost |
+| `GET` | `/dashboard/hourly-pattern` | 24-hour average load profile |
+| `GET` | `/dashboard/weekly-pattern` | Monday–Sunday average profile |
+| `GET` | `/dashboard/monthly-trend` | Month-by-month aggregation |
+| `GET` | `/dashboard/cost-analysis` | Peak vs off-peak cost breakdown |
+| `GET` | `/dashboard/statistics` | Descriptive stats (percentiles, skewness) |
 
-### 📈 Forecast
+</details>
+
+<details>
+<summary>📈 Forecast — 4 endpoints</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/forecast/run` | Run single device forecast |
-| POST | `/forecast/batch` | Forecast multiple devices at once |
-| GET | `/forecast/quick/{horizon}` | Quick all-device forecast |
-| GET | `/forecast/devices` | List available devices |
+| `POST` | `/forecast/run` | Single device forecast (24h/7d/30d) |
+| `POST` | `/forecast/batch` | Multi-device batch forecast |
+| `GET` | `/forecast/quick/{horizon}` | Quick all-device forecast |
+| `GET` | `/forecast/devices` | List available devices |
 
-### 🔍 Anomaly
+</details>
+
+<details>
+<summary>🔍 Anomaly — 4 endpoints</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/anomaly/run` | Run anomaly detection |
-| GET | `/anomaly/quick` | Quick scan with defaults |
-| GET | `/anomaly/summary` | Fast stats without full scan |
-| GET | `/anomaly/methods` | List available methods |
+| `POST` | `/anomaly/run` | Full anomaly detection run |
+| `GET` | `/anomaly/quick` | Quick scan with default settings |
+| `GET` | `/anomaly/summary` | Fast stats without full scan |
+| `GET` | `/anomaly/methods` | List available detection methods |
 
-### 💡 Optimization
+</details>
+
+<details>
+<summary>💡 Optimization — 4 endpoints</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/optimization/recommendations` | AI recommendations with savings |
-| GET | `/optimization/peak-analysis` | Peak hour breakdown |
-| GET | `/optimization/savings-summary` | Quick savings potential |
-| GET | `/optimization/device-stats` | Device consumption stats |
+| `GET` | `/optimization/recommendations` | AI recommendations with savings |
+| `GET` | `/optimization/peak-analysis` | Peak hour analysis |
+| `GET` | `/optimization/savings-summary` | Quick savings potential |
+| `GET` | `/optimization/device-stats` | Per-device consumption stats |
 
-### 🔬 Simulation
+</details>
+
+<details>
+<summary>🔬 Simulation — 3 endpoints</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/simulation/run` | Run scenario simulation |
-| GET | `/simulation/scenarios` | List scenarios + parameters |
-| GET | `/simulation/history` | Past simulation runs |
+| `POST` | `/simulation/run` | Run scenario simulation |
+| `GET` | `/simulation/scenarios` | List scenarios with parameters |
+| `GET` | `/simulation/history` | Past simulation runs |
 
-### 🔔 Alerts
+</details>
+
+<details>
+<summary>🔔 Alerts — 8 endpoints</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/alerts/` | List alerts (filterable) |
-| POST | `/alerts/` | Create manual alert |
-| GET | `/alerts/counts` | Total / unread / by severity |
-| GET | `/alerts/{id}` | Get single alert |
-| PATCH | `/alerts/{id}/read` | Mark as read |
-| PATCH | `/alerts/{id}/resolve` | Resolve alert |
-| POST | `/alerts/mark-all-read` | Bulk mark read |
-| DELETE | `/alerts/{id}` | Delete alert |
+| `GET` | `/alerts/` | List and filter alerts |
+| `POST` | `/alerts/` | Create a manual alert |
+| `GET` | `/alerts/counts` | Count by total/unread/severity |
+| `GET` | `/alerts/{id}` | Get single alert |
+| `PATCH` | `/alerts/{id}/read` | Mark alert as read |
+| `PATCH` | `/alerts/{id}/resolve` | Resolve an alert |
+| `POST` | `/alerts/mark-all-read` | Mark all alerts read |
+| `DELETE` | `/alerts/{id}` | Delete an alert |
 
-### 🖥️ Devices
+</details>
+
+<details>
+<summary>🖥️ Devices — 5 endpoints</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/devices/` | All devices with stats |
-| GET | `/devices/{id}` | Device detail + hourly/weekly profile |
-| GET | `/devices/{id}/forecast` | Device-specific forecast |
-| GET | `/devices/{id}/anomalies` | Device anomaly report |
-| GET | `/devices/{id}/history` | Device historical readings |
+| `GET` | `/devices/` | All devices with stats |
+| `GET` | `/devices/{id}` | Device detail + patterns |
+| `GET` | `/devices/{id}/forecast` | Device-specific forecast |
+| `GET` | `/devices/{id}/anomalies` | Device anomaly report |
+| `GET` | `/devices/{id}/history` | Device historical readings |
 
-### 📄 Reports & Export
+</details>
+
+<details>
+<summary>📄 Reports — 4 endpoints · 🤖 Models — 2 · ❤️ Health — 3</summary>
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/reports/summary` | Full JSON summary report |
-| GET | `/reports/export/csv` | Download raw dataset as CSV |
-| GET | `/reports/export/report-csv` | Download report as CSV |
-| GET | `/reports/export/json` | Download report as JSON |
+| `GET` | `/reports/summary` | Full JSON summary report |
+| `GET` | `/reports/export/csv` | Download raw dataset as CSV |
+| `GET` | `/reports/export/report-csv` | Download report as CSV |
+| `GET` | `/reports/export/json` | Download report as JSON |
+| `GET` | `/models/compare` | ARIMA vs Linear Regression comparison |
+| `GET` | `/models/accuracy-history` | Past accuracy measurements |
+| `GET` | `/health/` | Basic health ping |
+| `GET` | `/health/detailed` | Full system status |
+| `GET` | `/health/metrics` | API usage counters |
 
-### 🤖 Models
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/models/compare` | Side-by-side ARIMA vs Linear |
-| GET | `/models/accuracy-history` | Past accuracy measurements |
-
-### ❤️ Health
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/health/` | Basic health ping |
-| GET | `/health/detailed` | DB + data store status |
-| GET | `/health/metrics` | API usage counters |
+</details>
 
 ---
 
 ## 🧠 ML Architecture
 
-### Forecasting
-- **ARIMA** (default): fitted on last 90 days of daily totals, expanded to hourly using a 24-point load profile. Provides 95% confidence intervals.
-- **Ridge Regression** (fallback): 9 cyclical time features (sin/cos of hour, day, month + weekend + night flags). Trained on last 60 days.
-- **Metrics**: MAE, RMSE, Accuracy % (100 − MAPE)
+### Forecasting Models
+
+| Model | Description |
+|-------|-------------|
+| **ARIMA** | Fitted on last 90 days of daily totals, expanded to hourly using a 24-point load profile. Provides 95% confidence intervals via statsmodels. |
+| **Ridge Regression** | 9 cyclical time features (sin/cos of hour, day-of-week, month + weekend + night + business-hour flags). Trained on last 60 days. |
+
+**Metrics reported:** MAE · RMSE · Accuracy % (= 100 − MAPE)
+
+---
 
 ### Anomaly Detection
-- **Isolation Forest**: 200 trees, multivariate (energy + time + rolling stats)
-- **Z-Score**: rolling 24-hour window, flags |z| > 3
-- **Ensemble**: OR of both — highest recall
-- **Types detected**: consumption spike · sudden drop · night spike · extreme deviation · statistical anomaly
+
+| Method | Algorithm | Best For |
+|--------|-----------|----------|
+| **Isolation Forest** | 200 trees, multivariate features | Complex multi-dimensional patterns |
+| **Z-Score** | Rolling 24h window, \|z\| > 3 | Simple spikes and drops |
+| **Ensemble** (default) | IF OR Z-Score | Highest recall — recommended |
+
+**Anomaly types classified:**
+
+| Type | Description |
+|------|-------------|
+| `consumption_spike` | Energy > 2.5× rolling average |
+| `sudden_drop` | Energy < 20% of rolling average |
+| `night_spike` | High usage between 10 PM – 6 AM |
+| `extreme_deviation` | Z-score > 4σ |
+| `statistical_anomaly` | General statistical outlier |
+
+---
 
 ### Optimization Engine
-8 recommendation categories with estimated kWh + USD savings:
-Load Balancing · Scheduling · Device Optimisation · Fault Detection · HVAC · Weekend Setback · Battery/Off-peak · Lighting
+
+Analyses 5 patterns to generate ranked recommendations:
+
+| Pattern Analysed | Recommendation Triggered |
+|-----------------|--------------------------|
+| Load factor < 0.60 | Shift loads to off-peak hours |
+| Night consumption > 15% | Implement overnight shutdown schedule |
+| Top device share | Optimise highest-consuming device |
+| High device variance | Investigate potential fault/malfunction |
+| Weekend reduction < 30% | Enable weekend setback mode |
+| HVAC detected | Optimise setpoints + demand ventilation |
+| Any off-peak hours | Schedule battery/EV off-peak charging |
+| Lighting detected | Upgrade to occupancy-sensor LEDs |
+
+---
 
 ### Simulation Scenarios
-| Scenario | Model |
-|----------|-------|
-| Occupancy Change | Linear occupancy-to-load sensitivity model |
-| Temperature Change | ~3%/°C HVAC load adjustment (ASHRAE benchmark) |
-| Device Shutdown | Hourly load subtraction during shutdown window |
-| Peak Reduction | Demand-response clipping on top N% of hours |
+
+| Scenario | Physics Model |
+|----------|--------------|
+| **Occupancy Change** | 30% base load + occupancy-proportional HVAC/lighting sensitivity |
+| **Temperature Change** | ~3%/°C HVAC load shift (ASHRAE commercial benchmark) |
+| **Device Shutdown** | Hourly load subtraction during configurable shutdown window |
+| **Peak Reduction** | Quantile-based demand-response clipping on top N% peak hours |
 
 ---
 
 ## ⚙️ Configuration
 
-Copy `.env.example` to `.env` in the `backend/` folder:
+Edit `backend/.env` (copy from `.env.example`):
 
 ```env
 APP_ENV=development
@@ -324,10 +448,12 @@ ALLOWED_ORIGINS=["http://localhost:3000"]
 
 ```bash
 cd backend
-source venv/bin/activate   # or venv\Scripts\activate on Windows
+source venv/bin/activate    # Windows: venv\Scripts\activate
 pip install pytest
 pytest tests/test_ml.py -v
 ```
+
+Tests cover: preprocessing · forecasting · anomaly detection · optimization · simulation
 
 ---
 
@@ -335,26 +461,48 @@ pytest tests/test_ml.py -v
 
 | Layer | Technology |
 |-------|-----------|
-| Backend | Python 3.11, FastAPI 0.104, Uvicorn |
-| ML | scikit-learn 1.3, statsmodels 0.14, NumPy, pandas |
-| Database | SQLite via SQLAlchemy 2.0 ORM |
+| Backend API | Python 3.11, FastAPI 0.104, Uvicorn |
+| ML Libraries | scikit-learn 1.3, statsmodels 0.14, NumPy, pandas |
+| Database | SQLite + SQLAlchemy 2.0 ORM |
 | Frontend | React 18, Vite 5, React Router 6 |
 | Charts | Recharts 2.10 |
 | Icons | Lucide React |
 | HTTP Client | Axios |
-| Containers | Docker + Compose + Nginx |
+| Containers | Docker + Docker Compose + Nginx |
+| CI/CD | GitHub Actions |
 
 ---
 
-## ❓ Common Issues
+## ❓ Troubleshooting
 
-| Problem | Fix |
-|---------|-----|
-| `Could not import module "main"` | Make sure you are inside `backend/` folder before running uvicorn |
+| Problem | Solution |
+|---------|----------|
+| `Could not import module "main"` | Run `uvicorn main:app` from **inside** the `backend/` folder |
 | `npm run dev` fails | Run `npm install` first inside `frontend/` |
 | CORS error in browser | Confirm backend is running on port 8000 |
-| `No data loaded` banner | Go to Upload page → Generate Sample Data |
-| Forecast fails with < 48 records | Upload more data or use the sample generator |
-#   A I - B a s e d - e n e r g y - c o n s u m p t i o n - f o r e c a s t i n g . 
- 
- 
+| `No data loaded` warning | Go to Upload page → Generate Sample Data |
+| Forecast fails with < 48 records | Use the sample data generator |
+| Port already in use | Kill existing process or change port |
+| `Repository not found` on git push | Check GitHub repo URL and authentication token |
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit changes: `git commit -m "feat: add your feature"`
+4. Push: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+MIT License — free to use, modify and distribute.
+
+---
+
+<div align="center">
+  <p>Built with ⚡ by <a href="https://github.com/Moravignesh">Moravignesh</a></p>
+</div>
